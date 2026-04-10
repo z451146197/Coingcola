@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coingcola 助手 - 首页</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./home_search_fix_patch.css" />
+</head>
+<body>
+      <div class="home-layout">
+        <main class="home-main" id="homeMain">
+          <section class="welcome-card">
+            <div class="welcome-icon icon-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="4" y="5" width="16" height="10" rx="2"></rect>
+                <path d="M9 19h6"></path>
+                <path d="M12 15v4"></path>
+              </svg>
+            </div>
+            <div class="welcome-content">
+              <div class="welcome-title">欢迎回来</div>
+              <div class="welcome-desc" id="welcomeDesc">从搜索、网站导航或常用操作开始</div>
+            </div>
+          </section>
+
+          <section class="search-card">
+            <div class="search-bar">
+              <div class="search-leading icon-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="6"></circle>
+                  <path d="M20 20l-4.2-4.2"></path>
+                </svg>
+              </div>
+              <input id="searchInput" class="search-input" type="text" placeholder="搜索应用、设置、文件或任务" />
+              <button id="clearSearch" class="icon-btn icon-btn-clear is-hidden" type="button" aria-label="清空搜索">
+                <span>×</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="content-stack" id="mainContent">
+            <section class="nav-panel" id="navPanel">
+              <div class="section-head">
+                <div class="section-title">
+                  <span class="section-icon icon-wrap">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <circle cx="12" cy="12" r="8"></circle>
+                      <path d="M4 12h16"></path>
+                      <path d="M12 4a12 12 0 0 1 0 16"></path>
+                      <path d="M12 4a12 12 0 0 0 0 16"></path>
+                    </svg>
+                  </span>
+                  <span>网页导航</span>
+                </div>
+                <button id="editNavBtn" class="pill-btn" type="button">
+                  <span class="pill-icon">✎</span>
+                  <span id="editNavText">编辑</span>
+                </button>
+              </div>
+              <div class="edit-tip is-hidden" id="editTip">排序功能后续单独实现，本版先保留编辑与删除。</div>
+              <div class="nav-grid" id="navGrid"></div>
+            </section>
+
+            <div class="search-results is-hidden" id="searchResults">
+              <section class="search-best panel-card" id="bestCard"></section>
+              <section class="result-groups" id="resultGroups"></section>
+            </div>
+          </section>
+        </main>
+
+        <aside class="home-side" id="homeSide">
+          <section class="panel-card side-panel">
+            <div class="section-head">
+              <div class="section-title">
+                <span class="section-icon icon-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="4" y="4" width="6" height="6" rx="1"></rect>
+                    <rect x="14" y="4" width="6" height="6" rx="1"></rect>
+                    <rect x="4" y="14" width="6" height="6" rx="1"></rect>
+                    <rect x="14" y="14" width="6" height="6" rx="1"></rect>
+                  </svg>
+                </span>
+                <span>常用入口</span>
+              </div>
+              <div class="section-extra">可自定义</div>
+            </div>
+            <div class="quick-grid" id="quickGrid"></div>
+          </section>
+
+          <section class="panel-card side-panel recent-panel">
+            <div class="section-head">
+              <div class="section-title">
+                <span class="section-icon icon-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 7v5l3 2"></path>
+                    <circle cx="12" cy="12" r="8"></circle>
+                  </svg>
+                </span>
+                <span>最近使用</span>
+              </div>
+              <button id="clearRecentBtn" class="text-link" type="button">清空</button>
+            </div>
+            <div class="recent-list" id="recentList"></div>
+            <div class="recent-empty is-hidden" id="recentEmpty">暂无最近使用记录</div>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+    <script src="./modules/web-navigation.js"></script>
+  <script src="./app.js"></script>
+  
+  <script src="./home_fix_patch.js"></script>
+  <script src="./home_search_fix_patch.js"></script>
+</body>
+</html>

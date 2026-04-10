@@ -1,0 +1,166 @@
+﻿<UserControl x:Class="Coingcola.视图层.此电脑.详细配置视图"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Background="Transparent">
+
+    <ScrollViewer x:Name="根滚动容器"
+                  VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Disabled"
+                  Background="Transparent"
+                  PreviewMouseWheel="根滚动容器_PreviewMouseWheel">
+        <StackPanel Margin="0,0,4,0">
+
+            <!-- 标题 -->
+            <StackPanel Margin="0,0,0,20">
+                <TextBlock Text="详细配置"
+                           FontSize="30"
+                           FontWeight="Bold"
+                           Foreground="#0F172A"/>
+
+                <TextBlock Text="查看系统、硬件、存储和网络的完整配置明细。适合核对设备信息、排查识别异常和做基础留档。"
+                           Margin="0,10,0,0"
+                           FontSize="14"
+                           Foreground="#64748B"/>
+            </StackPanel>
+
+            <!-- 顶部状态 -->
+            <Border Background="#F8FAFC"
+                    BorderBrush="#CBD5E1"
+                    BorderThickness="1"
+                    CornerRadius="20"
+                    Padding="18"
+                    Margin="0,0,0,20">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock x:Name="页面状态文本"
+                               Grid.Column="0"
+                               Text="正在读取详细配置..."
+                               FontSize="13"
+                               TextWrapping="Wrap"
+                               VerticalAlignment="Center"
+                               Foreground="#64748B"/>
+
+                    <Button Grid.Column="1"
+                            Width="96"
+                            Height="40"
+                            Margin="12,0,0,0"
+                            Content="刷新"
+                            Click="刷新按钮_Click"
+                            Background="White"
+                            Foreground="#334155"
+                            BorderBrush="#CBD5E1"/>
+                </Grid>
+            </Border>
+
+            <!-- 摘要卡 -->
+            <ItemsControl x:Name="摘要卡片列表"
+                          Margin="0,0,0,20">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Width="240"
+                                Margin="0,0,12,12"
+                                Padding="16"
+                                CornerRadius="18"
+                                Background="White"
+                                BorderBrush="#E5E7EB"
+                                BorderThickness="1">
+                            <StackPanel>
+                                <TextBlock Text="{Binding 标题}"
+                                           FontSize="13"
+                                           Foreground="#64748B"/>
+                                <TextBlock Text="{Binding 数值}"
+                                           Margin="0,10,0,0"
+                                           FontSize="18"
+                                           FontWeight="Bold"
+                                           TextWrapping="Wrap"
+                                           Foreground="#0F172A"/>
+                                <TextBlock Text="{Binding 说明}"
+                                           Margin="0,8,0,0"
+                                           FontSize="11"
+                                           TextWrapping="Wrap"
+                                           Foreground="#94A3B8"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <!-- 分组详情 -->
+            <ItemsControl x:Name="分组列表控件">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="White"
+                                BorderBrush="#E5E7EB"
+                                BorderThickness="1"
+                                CornerRadius="20"
+                                Padding="18"
+                                Margin="0,0,0,16">
+                            <StackPanel>
+                                <TextBlock Text="{Binding 标题}"
+                                           FontSize="18"
+                                           FontWeight="Bold"
+                                           Foreground="#0F172A"/>
+
+                                <TextBlock Text="{Binding 简介}"
+                                           Margin="0,8,0,0"
+                                           FontSize="12"
+                                           TextWrapping="Wrap"
+                                           Foreground="#64748B"/>
+
+                                <ItemsControl ItemsSource="{Binding 项列表}"
+                                              Margin="0,16,0,0">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="#E2E8F0"
+                                                    BorderThickness="0,0,0,1"
+                                                    Padding="0,0,0,12"
+                                                    Margin="0,0,0,12">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="180"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <TextBlock Text="{Binding 名称}"
+                                                               FontSize="13"
+                                                               FontWeight="SemiBold"
+                                                               Foreground="#334155"/>
+
+                                                    <StackPanel Grid.Column="1">
+                                                        <TextBlock Text="{Binding 值}"
+                                                                   FontSize="14"
+                                                                   TextWrapping="Wrap"
+                                                                   Foreground="#0F172A"/>
+                                                        <TextBlock Text="{Binding 说明}"
+                                                                   Margin="0,6,0,0"
+                                                                   FontSize="11"
+                                                                   TextWrapping="Wrap"
+                                                                   Foreground="#94A3B8"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

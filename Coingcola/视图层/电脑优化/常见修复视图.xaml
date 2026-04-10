@@ -1,0 +1,190 @@
+﻿<UserControl x:Class="Coingcola.视图层.电脑优化.常见修复视图"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Background="Transparent">
+
+    <!--
+        常见修复视图：
+        当前先提供轻量、低风险、可解释的修复动作。
+    -->
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Disabled"
+                  Background="Transparent">
+        <StackPanel Margin="0,0,4,0">
+
+            <!-- 顶部标题 -->
+            <StackPanel Margin="0,0,0,20">
+                <TextBlock Text="常见修复"
+                           FontSize="30"
+                           FontWeight="Bold"
+                           Foreground="#0F172A"/>
+
+                <TextBlock Text="优先提供轻量、可解释、低风险的修复动作。先解决常见问题，再决定是否进入更深入处理。"
+                           Margin="0,10,0,0"
+                           FontSize="14"
+                           Foreground="#64748B"/>
+            </StackPanel>
+
+            <!-- 顶部提示 -->
+            <Border Background="#F8FAFC"
+                    BorderBrush="#CBD5E1"
+                    BorderThickness="1"
+                    CornerRadius="20"
+                    Padding="18"
+                    Margin="0,0,0,20">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock x:Name="页面状态文本"
+                               Grid.Column="0"
+                               Text="当前页提供常见问题的轻量修复动作。"
+                               FontSize="13"
+                               TextWrapping="Wrap"
+                               VerticalAlignment="Center"
+                               Foreground="#64748B"/>
+
+                    <Button Grid.Column="1"
+                            Width="96"
+                            Height="40"
+                            Margin="12,0,0,0"
+                            Content="刷新"
+                            Click="刷新按钮_Click"
+                            Background="White"
+                            Foreground="#334155"
+                            BorderBrush="#CBD5E1"/>
+                </Grid>
+            </Border>
+
+            <!-- 摘要区 -->
+            <ItemsControl x:Name="摘要卡片列表"
+                          Margin="0,0,0,20">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Width="220"
+                                Margin="0,0,12,12"
+                                Padding="16"
+                                CornerRadius="18"
+                                Background="White"
+                                BorderBrush="#E5E7EB"
+                                BorderThickness="1">
+                            <StackPanel>
+                                <TextBlock Text="{Binding 标题}"
+                                           FontSize="13"
+                                           Foreground="#64748B"/>
+                                <TextBlock Text="{Binding 数值}"
+                                           Margin="0,10,0,0"
+                                           FontSize="26"
+                                           FontWeight="Bold"
+                                           Foreground="#0F172A"/>
+                                <TextBlock Text="{Binding 说明}"
+                                           Margin="0,8,0,0"
+                                           FontSize="11"
+                                           TextWrapping="Wrap"
+                                           Foreground="#94A3B8"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <!-- 修复动作列表 -->
+            <ItemsControl x:Name="修复动作列表控件">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Width="360"
+                                Margin="0,0,16,16"
+                                Padding="18"
+                                CornerRadius="20"
+                                Background="White"
+                                BorderBrush="#E5E7EB"
+                                BorderThickness="1">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Text="{Binding 名称}"
+                                               FontSize="17"
+                                               FontWeight="Bold"
+                                               Foreground="#0F172A"
+                                               TextWrapping="Wrap"/>
+
+                                    <Border Grid.Column="1"
+                                            Background="#E2E8F0"
+                                            CornerRadius="10"
+                                            Padding="10,4"
+                                            Margin="12,0,0,0"
+                                            VerticalAlignment="Top">
+                                        <TextBlock Text="{Binding 风险级别}"
+                                                   FontSize="12"
+                                                   FontWeight="SemiBold"
+                                                   Foreground="#334155"/>
+                                    </Border>
+                                </Grid>
+
+                                <TextBlock Grid.Row="1"
+                                           Text="{Binding 说明}"
+                                           Margin="0,12,0,0"
+                                           FontSize="12"
+                                           TextWrapping="Wrap"
+                                           Foreground="#64748B"/>
+
+                                <StackPanel Grid.Row="2"
+                                            Margin="0,14,0,0">
+                                    <TextBlock Text="{Binding 分类}"
+                                               FontSize="12"
+                                               FontWeight="SemiBold"
+                                               Foreground="#2563EB"/>
+                                    <TextBlock Text="{Binding 生效说明}"
+                                               Margin="0,6,0,0"
+                                               FontSize="11"
+                                               TextWrapping="Wrap"
+                                               Foreground="#64748B"/>
+                                </StackPanel>
+
+                                <Button Grid.Row="3"
+                                        Height="40"
+                                        Margin="0,16,0,0"
+                                        Tag="{Binding Id}"
+                                        Content="{Binding 按钮文本}"
+                                        Click="执行修复按钮_Click"
+                                        Background="#0F172A"
+                                        Foreground="White"
+                                        BorderThickness="0"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

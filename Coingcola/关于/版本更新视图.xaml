@@ -1,0 +1,143 @@
+﻿<UserControl x:Class="Coingcola.视图层.关于.版本更新视图"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Background="Transparent">
+
+    <ScrollViewer x:Name="根滚动容器"
+                  VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Disabled"
+                  Background="Transparent"
+                  PreviewMouseWheel="根滚动容器_PreviewMouseWheel">
+        <StackPanel Margin="0,0,4,0">
+
+            <StackPanel Margin="0,0,0,20">
+                <TextBlock Text="版本更新"
+                           FontSize="30"
+                           FontWeight="Bold"
+                           Foreground="#0F172A"/>
+                <TextBlock Text="查看当前阶段已经落地的功能与版本推进情况。"
+                           Margin="0,10,0,0"
+                           FontSize="14"
+                           Foreground="#64748B"/>
+            </StackPanel>
+
+            <Border Background="#F8FAFC"
+                    BorderBrush="#E2E8F0"
+                    BorderThickness="1"
+                    CornerRadius="24"
+                    Padding="24"
+                    Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Text="当前版本"
+                               FontSize="13"
+                               Foreground="#64748B"/>
+                    <TextBlock x:Name="当前版本文本"
+                               Margin="0,12,0,0"
+                               Text="v0.1.0"
+                               FontSize="28"
+                               FontWeight="Bold"
+                               Foreground="#0F172A"/>
+                    <TextBlock x:Name="版本结论文本"
+                               Margin="0,16,0,0"
+                               Text="版本结论"
+                               FontSize="14"
+                               TextWrapping="Wrap"
+                               Foreground="#475569"/>
+                </StackPanel>
+            </Border>
+
+            <Border Background="White"
+                    BorderBrush="#E5E7EB"
+                    BorderThickness="1"
+                    CornerRadius="20"
+                    Padding="18"
+                    Margin="0,0,0,16">
+                <StackPanel>
+                    <TextBlock Text="本阶段已落地"
+                               FontSize="18"
+                               FontWeight="Bold"
+                               Foreground="#0F172A"/>
+                    <TextBlock Margin="0,12,0,0"
+                               Text="• 开始使用：首页 / WPS 快捷键 / 管理常用网站"
+                               FontSize="13"
+                               Foreground="#334155"/>
+                    <TextBlock Margin="0,8,0,0"
+                               Text="• 我的电脑：电脑概览 / 详细配置 / 运行状态 / 更多信息"
+                               FontSize="13"
+                               Foreground="#334155"/>
+                    <TextBlock Margin="0,8,0,0"
+                               Text="• 电脑优化：一键优化 / 常用设置 / 常见修复 / 驱动与激活 / 高级设置"
+                               FontSize="13"
+                               Foreground="#334155"/>
+                    <TextBlock Margin="0,8,0,0"
+                               Text="• 软件中心：安装常用软件 / 软件目录 / 软件更新"
+                               FontSize="13"
+                               Foreground="#334155"/>
+                    <TextBlock Margin="0,8,0,0"
+                               Text="• 关于：程序简介 / 版本更新"
+                               FontSize="13"
+                               Foreground="#334155"/>
+                </StackPanel>
+            </Border>
+
+            <Border Background="White"
+                    BorderBrush="#E5E7EB"
+                    BorderThickness="1"
+                    CornerRadius="20"
+                    Padding="18"
+                    Margin="0,0,0,16">
+                <StackPanel>
+                    <TextBlock Text="本阶段重点变化"
+                               FontSize="18"
+                               FontWeight="Bold"
+                               Foreground="#0F172A"/>
+                    <TextBlock Margin="0,12,0,0"
+                               Text="• 首页从“功能目录”转向“任务中枢”"
+                               FontSize="13"
+                               Foreground="#334155"/>
+                    <TextBlock Margin="0,8,0,0"
+                               Text="• 我的电脑链路已从电脑概览延展到详细配置、运行状态和扩展信息"
+                               FontSize="13"
+                               Foreground="#334155"/>
+                    <TextBlock Margin="0,8,0,0"
+                               Text="• 软件中心从安装入口扩展为安装、浏览、更新闭环"
+                               FontSize="13"
+                               Foreground="#334155"/>
+                    <TextBlock Margin="0,8,0,0"
+                               Text="• 一键优化页已作为总控台骨架接入"
+                               FontSize="13"
+                               Foreground="#334155"/>
+                </StackPanel>
+            </Border>
+
+            <Border Background="White"
+                    BorderBrush="#E5E7EB"
+                    BorderThickness="1"
+                    CornerRadius="20"
+                    Padding="18">
+                <StackPanel>
+                    <TextBlock Text="下一阶段方向"
+                               FontSize="18"
+                               FontWeight="Bold"
+                               Foreground="#0F172A"/>
+                    <TextBlock Margin="0,12,0,0"
+                               Text="• 统一交互细节：滚动、状态文案、卡片密度、页面层级"
+                               FontSize="13"
+                               Foreground="#334155"/>
+                    <TextBlock Margin="0,8,0,0"
+                               Text="• 强化搜索意图识别：文件 / 网站 / 系统对象 / 知识速查 / 网络搜索"
+                               FontSize="13"
+                               Foreground="#334155"/>
+                    <TextBlock Margin="0,8,0,0"
+                               Text="• 继续增强一键优化页，增加更多真实诊断与处理逻辑"
+                               FontSize="13"
+                               Foreground="#334155"/>
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

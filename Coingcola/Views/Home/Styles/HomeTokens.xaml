@@ -1,0 +1,35 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Colors -->
+    <SolidColorBrush x:Key="Home.PageBackgroundBrush" Color="#F5F7FB" />
+    <SolidColorBrush x:Key="Home.CardBackgroundBrush" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="Home.CardBorderBrush" Color="#E2E8F0" />
+    <SolidColorBrush x:Key="Home.CardMutedBrush" Color="#F8FAFC" />
+    <SolidColorBrush x:Key="Home.TextPrimaryBrush" Color="#0F172A" />
+    <SolidColorBrush x:Key="Home.TextSecondaryBrush" Color="#475569" />
+    <SolidColorBrush x:Key="Home.TextTertiaryBrush" Color="#64748B" />
+    <SolidColorBrush x:Key="Home.IconBoxBrush" Color="#F1F5F9" />
+    <SolidColorBrush x:Key="Home.AccentBrush" Color="#0EA5E9" />
+    <SolidColorBrush x:Key="Home.AccentHoverBrush" Color="#0284C7" />
+
+    <!-- Font -->
+    <sys:Double x:Key="Home.TitleFontSize">26</sys:Double>
+    <sys:Double x:Key="Home.SectionTitleFontSize">14</sys:Double>
+    <sys:Double x:Key="Home.ItemTitleFontSize">14</sys:Double>
+    <sys:Double x:Key="Home.ItemSubtitleFontSize">12</sys:Double>
+    <sys:Double x:Key="Home.CaptionFontSize">11</sys:Double>
+
+    <!-- Layout -->
+    <sys:Double x:Key="Home.SearchBoxHeight">52</sys:Double>
+    <sys:Double x:Key="Home.RecentItemMinHeight">52</sys:Double>
+    <sys:Double x:Key="Home.QuickActionMinHeight">72</sys:Double>
+    <sys:Double x:Key="Home.WebNavIconSize">44</sys:Double>
+    <sys:Double x:Key="Home.IconBoxSize">32</sys:Double>
+    <sys:Double x:Key="Home.CardCornerRadius">16</sys:Double>
+    <sys:Double x:Key="Home.PanelCornerRadius">20</sys:Double>
+    <Thickness x:Key="Home.PanelPadding">18</Thickness>
+    <Thickness x:Key="Home.ItemPadding">14,12,14,12</Thickness>
+</ResourceDictionary>
